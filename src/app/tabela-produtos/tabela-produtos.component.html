@@ -1,39 +1,18 @@
 <p>Tabela Produtos</p>
 
-<table>
+<table *ngIf="listaProdutos.length > 0">
     <tr>
         <th>ID</th>
         <th>NOME</th>
         <th>PRECO</th>
     </tr>
 
-    <tr>
-        <td>1</td>
-        <td>Produto 1</td>
-        <td>10</td>
+    <tr *ngFor="let produto of listaProdutos">
+        <td>{{produto.id}}</td>
+        <td>{{produto.nome}}</td>
+        <td>{{produto.preco}}</td>
     </tr>
 
-    <tr>
-        <td>2</td>
-        <td>Produto 2</td>
-        <td>20</td>
-    </tr>
-
-    <tr>
-        <td>3</td>
-        <td>Produto 3</td>
-        <td>30</td>
-    </tr>
-
-    <tr>
-        <td>4</td>
-        <td>Produto 4</td>
-        <td>40</td>
-    </tr>
-
-    <tr>
-        <td>5</td>
-        <td>Produto 5</td>
-        <td>50</td>
-    </tr>
+  
 </table>
+<p *ngIf="listaProdutos.length <= 0">NÃO HÁ PRODUTOS CADASTRADOS!</p>
